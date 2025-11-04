@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 2: Event Registration</title>
+    <style>
+        :root { --gap: 1rem; }
+        body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; margin: 0; background: #f7f7f8; color: #222; padding: 1rem; }
+        
+        .container { max-width: 600px; margin: 2rem auto; background: white; border: 1px solid #e6e6e9; border-radius: .75rem; padding: 1.5rem 2rem; }
+        
+        h2 { font-size: 1.75rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; }
+        p { margin-top: 0; margin-bottom: 1.5rem; color: #666; font-size: 1rem; }
+        h3 { font-size: 1.15rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.5rem; }
+        h4 { font-size: 1rem; font-weight: 600; margin-top: 1rem; margin-bottom: 0.5rem; }
+        
+        .grid-2-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
+        .form-row { display: flex; flex-direction: column; gap: 0.4rem; }
+        label { font-weight: 600; font-size: 0.95rem; }
+        
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; }
+        .options-grid label, .checkbox-group label { font-weight: normal; display: flex; align-items: center; gap: 0.5rem; }
+
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
+            width: 100%; padding: .7rem .8rem; border: 1px solid #cfd3d8; border-radius: .3rem; background: #fff; box-sizing: border-box; font-size: 1rem;
+        }
+
+        .actions { margin-top: 2rem; text-align: center; }
+        button { font-size: 1rem; padding: 0.75rem 2.5rem; border-radius: .3rem; cursor: pointer; font-weight: 600; color: white; text-transform: uppercase; background: #2196f3; border: 1px solid #2196f3; }
+
+        @media (max-width: 720px) {
+            .container { padding: 1rem; margin: 1rem auto; }
+            .grid-2-col, .options-grid { grid-template-columns: 1fr; }
+            button { width: 100%; padding: 0.8rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#" method="post">
+            <h2>Event Registration Form</h2>
+            <p>Please fill out the form below to register for the event.</p>
+
+            <div class="grid-2-col">
+                <div class="form-row">
+                    <label for="firstName2">First Name</label>
+                    <input type="text" id="firstName2" name="firstName" placeholder="John" required>
+                </div>
+                <div class="form-row">
+                    <label for="lastName2">Last Name</label>
+                    <input type="text" id="lastName2" name="lastName" placeholder="Doe" required>
+                </div>
+            </div>
+
+            <div class="form-row" style="margin-top: 1rem;">
+                <label for="email2">Email Address</label>
+                <input type="email" id="email2" name="email" placeholder="john.doe@example.com" required>
+            </div>
+
+            <div class="form-row" style="margin-top: 1rem;">
+                <label for="phone2">Phone Number</label>
+                <input type="tel" id="phone2" name="phone" placeholder="+1 (555) 123-4567">
+            </div>
+
+            <div class="grid-2-col" style="margin-top: 1rem;">
+                <div class="form-row">
+                    <label for="country">Country</label>
+                    <select id="country" name="country" required>
+                        <option value="" disabled selected>Select Country</option>
+                        <option value="ID">Indonesia</option>
+                        <option value="US">United States</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="dob">Date of Birth</label>
+                    <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" onfocus="(this.type='date')" onblur="(this.type='text')">
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">T-Shirt Size</h3>
+            <div class="options-grid">
+                <label for="small">
+                    <input type="radio" id="small" name="tshirtSize" value="Small" required> Small
+                </label>
+                <label for="medium">
+                    <input type="radio" id="medium" name="tshirtSize" value="Medium"> Medium
+                </label>
+                <label for="large">
+                    <input type="radio" id="large" name="tshirtSize" value="Large"> Large
+                </label>
+                <label for="extraLarge">
+                    <input type="radio" id="extraLarge" name="tshirtSize" value="Extra Large"> Extra Large
+                </label>
+            </div>
+
+            <h3>Emergency Contact Information</h3>
+            <div class="form-row">
+                <label for="emergencyName">Emergency Contact Name</label>
+                <input type="text" id="emergencyName" name="emergencyName" placeholder="Jane Smith" required>
+            </div>
+            <div class="form-row" style="margin-top: 1rem;">
+                <label for="emergencyPhone">Emergency Contact Phone Number</label>
+                <input type="tel" id="emergencyPhone" name="emergencyPhone" placeholder="+1 (555) 123-4567" required>
+            </div>
+
+            <div class="checkbox-group" style="margin-top: 2rem;">
+                <label for="terms2">
+                    <input type="checkbox" id="terms2" name="terms" required>
+                    I agree to the terms and conditions of this event.
+                </label>
+            </div>
+            
+            <div class="actions">
+                <button type="submit" id="form2-submit">Register Now</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

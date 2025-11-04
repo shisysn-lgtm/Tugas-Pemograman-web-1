@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 1: Class Registration</title>
+    <style>
+        :root { --gap: 1rem; }
+        body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; margin: 0; background: #f7f7f8; color: #222; padding: 1rem; }
+        
+        .container { max-width: 600px; margin: 2rem auto; background: white; border: 1px solid #e6e6e9; border-radius: .75rem; padding: 1.5rem 2rem; }
+        
+        h2 { font-size: 1.75rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; }
+        p { margin-top: 0; margin-bottom: 1.5rem; color: #666; font-size: 1rem; }
+        h3 { font-size: 1.15rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.5rem; }
+        
+        .grid-2-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
+        .form-row { display: flex; flex-direction: column; gap: 0.4rem; }
+        label { font-weight: 600; font-size: 0.95rem; }
+        
+        .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1.5rem; }
+        .options-grid label, .checkbox-group label { font-weight: normal; display: flex; align-items: center; gap: 0.5rem; }
+
+        input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+            width: 100%; padding: .7rem .8rem; border: 1px solid #cfd3d8; border-radius: .3rem; background: #fff; box-sizing: border-box; font-size: 1rem;
+        }
+
+        .small-instruction { color: #666; font-size: 0.9rem; margin-top: 0.5rem; display: block; }
+
+        .actions { margin-top: 2rem; text-align: center; }
+        button { font-size: 1rem; padding: 0.75rem 2.5rem; border-radius: .3rem; cursor: pointer; font-weight: 600; color: white; text-transform: uppercase; background: #222; border: 1px solid #222; }
+
+        @media (max-width: 720px) {
+            .container { padding: 1rem; margin: 1rem auto; }
+            .grid-2-col, .options-grid { grid-template-columns: 1fr; }
+            button { width: 100%; padding: 0.8rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#" method="post">
+            <h2>Class Registration Form</h2>
+            <p>Please fill out the form below to register for our class</p>
+            
+            <div class="grid-2-col">
+                <div class="form-row">
+                    <input type="text" id="firstName1" name="firstName" placeholder="First Name" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" id="lastName1" name="lastName" placeholder="Last Name" required>
+                </div>
+            </div>
+
+            <div class="grid-2-col" style="margin-top: 1rem;">
+                <div class="form-row">
+                    <input type="email" id="email1" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-row">
+                    <input type="tel" id="phone1" name="phone" placeholder="Phone Number">
+                </div>
+            </div>
+
+            <h3>Class Level</h3>
+            <div class="form-row">
+                <select id="classLevel" name="classLevel" required>
+                    <option value="" disabled selected>Select your class level</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+                <span class="small-instruction">Please choose the appropriate level for your experience</span>
+            </div>
+
+            <h3>Class Days</h3>
+            <span class="small-instruction" style="margin-bottom: 1rem;">Please select the days you are available to attend class</span>
+            <div class="options-grid">
+                <label for="monday">
+                    <input type="checkbox" id="monday" name="classDays" value="Monday"> Monday
+                </label>
+                <label for="tuesday">
+                    <input type="checkbox" id="tuesday" name="classDays" value="Tuesday"> Tuesday
+                </label>
+                <label for="wednesday">
+                    <input type="checkbox" id="wednesday" name="classDays" value="Wednesday"> Wednesday
+                </label>
+                <label for="thursday">
+                    <input type="checkbox" id="thursday" name="classDays" value="Thursday"> Thursday
+                </label>
+                <label for="friday">
+                    <input type="checkbox" id="friday" name="classDays" value="Friday"> Friday
+                </label>
+                <label for="saturday">
+                    <input type="checkbox" id="saturday" name="classDays" value="Saturday"> Saturday
+                </label>
+            </div>
+
+            <div class="checkbox-group" style="margin-top: 2rem;">
+                <label for="terms1">
+                    <input type="checkbox" id="terms1" name="terms" required>
+                    I agree to the terms and conditions of the class registration
+                </label>
+            </div>
+            
+            <div class="actions">
+                <button type="submit" id="form1-submit">Register Now!</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
